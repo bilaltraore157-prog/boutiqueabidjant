@@ -1,0 +1,239 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica', Arial, sans-serif; }
+body { background: #f0f2f5; padding-bottom: 70px; }
+
+/* Couverture et Profil */
+.fb-cover {
+    position: relative;
+    height: 200px;
+    background: #ddd;
+}
+.cover-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.fb-profile-pic {
+    position: absolute;
+    bottom: -50px;
+    left: 20px;
+    width: 110px;
+    height: 110px;
+    border: 4px solid white;
+    border-radius: 50%; /* Cercle comme sur FB */
+    overflow: hidden;
+    background: white;
+}
+.fb-profile-pic img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Infos Page */
+.fb-page-info {
+    padding: 60px 20px 20px;
+    background: white;
+    text-align: left;
+}
+.fb-page-info h1 { font-size: 1.5rem; margin-bottom: 5px; }
+.fb-page-info .category { color: #65676b; font-size: 0.9rem; margin-bottom: 15px; }
+
+.fb-action-buttons { display: flex; gap: 10px; }
+.btn-msg { background: #1877f2; color: white; flex: 1; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold; }
+.btn-light { background: #e4e6eb; color: black; padding: 10px 15px; border-radius: 6px; border: none; font-weight: bold; }
+
+.separator { border: 0; border-top: 1px solid #ddd; margin: 10px 0; }
+
+/* Grille de produits */
+.title { padding: 15px; font-size: 1.1rem; color: #65676b; }
+.product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
+.card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+.card img { width: 100%; height: 140px; object-fit: contain; padding: 5px; }
+.card-details { padding: 10px; }
+.price { color: #1d1d1f; font-weight: bold; margin: 5px 0; }
+.buy-btn { display: block; background: #f0f2f5; color: #1877f2; text-decoration: none; text-align: center; padding: 7px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; }
+
+/* Menu Bas */
+.fb-nav { position: fixed; bottom: 0; width: 100%; background: white; display: flex; justify-content: space-around; padding: 12px; border-top: 1px solid #ddd; }
+.fb-nav a { color: #65676b; font-size: 1.4rem; }
+.fb-nav a.active { color: #1877f2; border-bottom: 3px solid #1877f2; }
+.admin-container { padding: 20px; background: white; min-height: 100vh; }
+.admin-container label { display: block; margin-top: 15px; font-weight: bold; }
+.admin-container input, .admin-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.status-selection {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f0f2f5;
+    border-radius: 8px;
+}
+.status-selection div { margin-bottom: 5px; }
+/* Style de la carte produit */
+.card {
+    background: white;
+    border-radius: 12px; /* Bord plus arrondi */
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Ombre plus douce */
+    border: 1px solid #e4e6eb;
+    transition: transform 0.2s;
+}
+
+/* Badge d'état (Nouveau / Seconde main) */
+.badge-etat {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    z-index: 10;
+    text-transform: uppercase;
+}
+
+/* Couleurs des badges */
+.badge-nouveau { background-color: #31a24c; } /* Vert Facebook */
+.badge-occasion { background-color: #f7b928; } /* Orange/Jaune pro */
+
+/* Image du téléphone */
+.card img {
+    width: 100%;
+    height: 250px; /* On augmente la hauteur pour mieux voir l'iPhone */
+    object-fit: cover; /* Remplit bien le cadre sans laisser de bandes blanches */
+    object-position: center; /* Garde le centre de la photo (l'iPhone) bien visible */
+    display: block;
+    border-bottom: 1px solid #f0f2f5;
+}
+.card {
+    position: relative; /* INDISPENSABLE pour que le badge se place par-dessus l'image */
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e4e6eb;
+    margin-bottom: 10px;
+}
+
+.badge-etat {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 14px;
+    border-radius: 50px; /* Forme pilule plus moderne */
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: white;
+    z-index: 5;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre pour bien détacher du fond */
+}
+
+.badge-nouveau { background-color: #31a24c; } /* Vert */
+.badge-occasion { background-color: #f7b928; } /* Orange */
+
+/* Détails du texte */
+.card-details { padding: 12px; }
+
+.card-details h3 {
+    font-size: 1rem;
+    color: #1c1e21;
+    margin-bottom: 4px;
+    text-transform: capitalize;
+}
+
+.price {
+    font-size: 1.1rem;
+    color: #d70015; /* Rouge Apple pour le prix */
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.desc-mini {
+    font-size: 13px;
+    color: #65676b;
+    margin: 8px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limite à exactement 2 lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+}
+/* Bouton Voir l'offre */
+.buy-btn {
+    display: block;
+    margin-top: 10px;
+    background: #e7f3ff;
+    color: #1877f2;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+/* Fenêtre Modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.8);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-img-slide {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#modal-price {
+    font-size: 22px;
+    color: #d70015;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#modal-desc {
+    white-space: pre-wrap; /* Garde les retours à la ligne de l'admin */
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.delete-btn {
+    display: none; /* Caché par défaut */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #d70015;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 100;
+}
